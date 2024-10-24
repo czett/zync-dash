@@ -1,3 +1,5 @@
+![Wo ist das Bild hin?](https://github.com/czett/zync-dash/blob/main/static/banner.png)
+
 # Zync Dash
 
 **Zync Dash** ist eine lokal betriebene Webanwendung, die als zentrales Dashboard für die Überwachung und Verwaltung von Hausautomatisierung und Energiemanagement dient. Das Dashboard bietet eine benutzerfreundliche Oberfläche zur Anzeige wichtiger Informationen wie Wetter, Solarenergie-Prognosen und aktuelle Nachrichten.
