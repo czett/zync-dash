@@ -83,6 +83,7 @@ body, html{
     transform: translate(-50%, -50%);
     width: calc(100% - 4vh);
     height: auto;
+    user-select: none;
 }
 
 .screen .nav .links .link{
@@ -141,7 +142,7 @@ body, html{
 }
 
 .panel.small{
-    aspect-ratio: 2.5;
+    aspect-ratio: 2;
     flex: 1;
 }
 

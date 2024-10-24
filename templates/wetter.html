@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+Wie ist das Wetter, Patrick?
+{% endblock %}
+
+{% block smallpanels %}
+    <div class="panels-row">
+        <div class="panel small">
+            <h2 class="title">Temperatur</h2>
+            <div class="value">{{weather['temp']}}°C <div class="tip">jetzt, in Dortmund</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">cloud</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">Sonnenstunden</h2>
+            <div class="value">{{weather['sun_hrs']}} Stunden <div class="tip">heute, insgesamt</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">sunny</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">Regenmenge</h2>
+            <div class="value">{{weather['rain_amount']}} L/m<sup>2</sup> <div class="tip">heute, insgesamt</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">water_drop</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">Regenwahrscheinlichkeit</h2>
+            <div class="value">{{weather['pop']}}% <div class="tip">maximal heute</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">casino</span>
+            </div>
+        </div>
+    </div>
+    <div class="panels-row">
+        <div class="panel small">
+            <h2 class="title">Windgeschwindigkeit</h2>
+            <div class="value">{{weather['wind']}} km/h<div class="tip">jetzt, in Dortmund</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">air</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">Luftfeuchtigkeit</h2>
+            <div class="value">{{weather['hum']}}% <div class="tip">heute, insgesamt</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">opacity</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">Luftdruck</h2>
+            <div class="value">{{weather['pressure']}} hPa<div class="tip">heute, insgesamt</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">speed</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">UV-Index</h2>
+            <div class="value">{{weather['uv']}} <div class="tip">maximal heute</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">nest_true_radiant</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}

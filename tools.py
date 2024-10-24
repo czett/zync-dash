@@ -1,18 +1,24 @@
-import openmeteo_requests
-from openmeteo_sdk.Variable import Variable
 import requests
-from newsapi import NewsApiClient
 
 with open("credentials.yml", "r") as c:
-    news_key = c.readlines()[0]
+    weather_key = c.readlines()[0]
 
-# Init
-newsapi = NewsApiClient(api_key=news_key)
+def weather():
+    city = "Dortmund"
+    days = 1
 
-# /v2/top-headlines
-top_headlines = newsapi.get_top_headlines(language='de', country='de')
+    url = f"http://api.weatherapi.com/v1/forecast.json?key={weather_key}&q={city}&days={days}&aqi=no&alerts=no"
 
-# /v2/top-headlines/sources
-#sources = newsapi.get_sources()
+    response = requests.get(url)
+    data = response.json()
 
-print(top_headlines)
+    temperature = data['current']['temp_c']
+    rain_amount = data['current']['precip_mm']
+    sun_hours = data['current']['uv']
+    rain_probability = data['forecast']['forecastday'][0]['day']['daily_chance_of_rain']
+    windspeed = data['current']['wind_kph']
+    humidity = data['current']['humidity']
+    pressure = data['current']['pressure_mb']
+    uv_index = data['current']['uv']
+
+    return {"temp": temperature, "rain_amount": rain_amount, "sun_hrs": sun_hours, "pop": rain_probability, "wind": windspeed, "hum": humidity, "pressure": pressure, "uv": uv_index}
