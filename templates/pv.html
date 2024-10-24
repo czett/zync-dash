@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+Wie elektrisierend, Patrick!
+{% endblock %}
+
+{% block smallpanels %}
+    <div class="panels-row">
+        <div class="panel small">
+            <h2 class="title">PV-Prognose</h2>
+            <div class="value">10 kWh <div class="tip">heute, insgesamt</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">sunny</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">PV-Ertrag</h2>
+            <div class="value">6,8 kWh <div class="tip">bis jetzt, 12:34 Uhr</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">bolt</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">Leistung</h2>
+            <div class="value">2.2 kW <div class="tip">gerade jetzt</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">power</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">Energieverbrauch</h2>
+            <div class="value">5.2 kWh <div class="tip">bisher heute</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">home</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block bigpanel %}
+    <div class="panels-row">
+        <div class="panel big">
+            <h2 class="title">Batterie</h2>
+            <div class="value">74% <div class="tip">+36% seit heute Morgen</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">battery_4_bar</span>
+            </div>
+            <div class="diagram-wrap">
+                <div class="ring"></div>
+                <div class="ring-pos"></div>
+                <div class="center-cover"></div>
+                <div class="percentage">74%</div>
+                <div class="kwh">14,8 kWh</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

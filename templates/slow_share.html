@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+Geteiltes Leid ist halbes Leid...
+{% endblock %}
+
+{% block smallpanels %}
+    <div class="panels-row ox quad-panels files">
+        {% for file in files %}
+        <div class="panel">
+            <h2 class="title">{{file}}</h2>
+            <div class="corner-icon">
+                <span>{{file.split(".")[-1]}}</span>
+            </div>
+            <div class="btns">
+                <a href="/slow-share/download/{{file}}" class="btn">
+                    <span class="material-symbols-rounded">download</span>
+                </a>
+                <a href="/slow-share/delete/{{file}}" class="btn">
+                    <span class="material-symbols-rounded">delete</span>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block bigpanel %}
+    <div class="panels-row">
+        <div class="panel big">
+            <h2 class="title">Datei-Upload</h2>
+            <form action="/slow-share/upload" enctype="multipart/form-data" method="post" class="fileshare">
+                <label for="file" class="file-label">Datei auswählen</label>
+                <input type="file" name="file" id="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.jpg,.jpeg,.png,.gif,.bmp,.mp4,.avi,.mov,.mp3,.wav,.ogg,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/pdf,image/*,video/*" onchange="toggleUploadButton()">
+                <button type="submit" id="uploadButton" disabled>Hochladen</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleUploadButton() {
+            const fileInput = document.getElementById('file');
+            const uploadButton = document.getElementById('uploadButton');
+            uploadButton.disabled = !fileInput.files.length;
+        }
+    </script>
+{% endblock %}

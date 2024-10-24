@@ -174,6 +174,7 @@ body, html{
 
 .panel.big{
     flex: 1;
+    max-width: 50%;
     aspect-ratio: 3;
 }
 
@@ -195,7 +196,8 @@ body, html{
     border-radius: 50%;
     inset: 50% auto auto 50%;
     transform: translate(-50%, -50%);
-    background: conic-gradient(transparent 0% 10%, red 10%, yellow 35%, green 75%, darkgreen 90%, transparent 90% 100%);
+    /* background: conic-gradient(transparent 0% 10%, red 10%, yellow 35%, green 75%, darkgreen 90%, transparent 90% 100%); */
+    background: conic-gradient(transparent 0% 10%, rgb(204, 230, 255) 10%, rgb(103, 179, 241) 35%, rgb(12, 143, 204) 75%, rgb(1, 61, 129) 90%, transparent 90% 100%);
 }
 
 .ring-pos{
@@ -225,6 +227,7 @@ body, html{
 
 .percentage{
     font-size: 4rem;
+    font-weight: 600;
     position: absolute;
     inset: 50% auto auto 50%;
     transform: translate(50%, 50%);
@@ -263,4 +266,112 @@ body, html{
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--fg);
+}
+
+/* file sharing */
+
+.panels-row.ox{
+    overflow-x: auto;
+    width: auto;
+}
+
+.panels-row.quad-panels .panel{
+    aspect-ratio: 1;
+}
+
+.panels-row.files .panel{
+    max-width: 12.5vw !important;
+    flex: auto !important;
+}
+
+.panels-row.files .panel .title{
+    text-wrap: wrap;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30ch;
+}
+
+.panels-row.files .panel .corner-icon{
+    inset: auto 0 0 auto;
+}
+
+.panels-row.files .panel .corner-icon span{
+    font-size: 8rem;
+}
+
+input[type="file"]{
+    visibility: hidden;
+}
+
+.file-label, button{
+    background: var(--ac);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 1vh 2vh;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+button:hover{
+    filter: brightness(1.1);
+}
+
+.file-label{
+    border: 2px solid var(--ac);
+    background-color: var(--gbg);
+    color: var(--ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+form.fileshare{
+    display: flex;
+    flex-direction: column;
+}
+
+.panels-row.files .panel .btns{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    gap: 1vh;
+    align-items: center;
+    padding: 1.5vh;
+    position: absolute;
+    inset: 0 0 auto auto;
+}
+
+.panels-row.files .panel .btns a{
+    width: 35%;
+    aspect-ratio: 1 !important;
+    background-color: var(--ac);
+    border-radius: 50%;
+    padding: 1vh;
+    transition: 200ms;
+    opacity: 0;
+}
+
+.panels-row.files .panel .btns a span{
+    color: white;
+}
+
+.panels-row.files .panel .btns a:hover{
+    filter: brightness(1.1);
+}
+
+.panels-row.files .panel:hover a{
+    opacity: 1;
+}
+
+button:disabled{
+    filter: saturate(0);
+    cursor: not-allowed;
 }

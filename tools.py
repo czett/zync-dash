@@ -1,7 +1,9 @@
-import requests
+import requests, json
 
 with open("credentials.yml", "r") as c:
-    weather_key = c.readlines()[0]
+    lines = c.readlines()
+
+    weather_key = lines[0].strip()
 
 def weather():
     city = "Dortmund"
