@@ -6,7 +6,8 @@
 
 ## Funktionen
 
-- **Wetterdaten**: Anzeige der aktuellen Temperatur und Wetterbedingungen.
+- **Wetterdaten**: Anzeige der aktuellen Temperatur und Wetterbedingungen. (erledigt)
+- **Lokales Datei-Sharing, wie AirDrop**: siehe Repo "slow-share". (erledigt)
 - **PV-Prognose**: Vorschau der voraussichtlichen Energieproduktion der Solaranlage für den aktuellen Tag.
 - **PV-Ertrag**: Aktueller Ertrag der Solaranlage bis zur aktuellen Uhrzeit.
 - **Batteriestatus**: Anzeige des Ladezustands der Solarbatterie und Informationen über den Ladeverlauf.
