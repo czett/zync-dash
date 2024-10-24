@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root{
+    --fg: #110200;
+    /* --ac: #FF5733;
+    --bg: #fdebe8; */
+    --ac: #33b4ff;
+    --bg: #e8f6fd;
+    --gbg: #f8f8f8;
+    --font: 'Lexend Deca';
+    --navwidth: 5%;
+}
+
+*{
+    font-family: var(--font);
+}
+
+::selection{
+    background: var(--ac);
+    color: var(--bg);
+}
+
+body, html{
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: var(--bg);
+}
+
+.screen{
+    width: 100%;
+    position: relative;
+}
+
+.screen .nav{
+    height: 92vh;
+    width: var(--navwidth);
+    position: fixed;
+    box-sizing: border-box;
+    padding: 6vh 2vh;
+    position: absolute;
+    inset: 4vh auto 4vh 4vh;
+    background-color: white;
+    border-radius: 1.5rem;
+}
+
+.screen .frame{
+    width: calc(100% - var(--navwidth));
+    box-sizing: border-box;
+    padding: 5vh 10vh;
+    position: absolute;
+    inset: 0% 0% auto auto;
+}
+
+.screen .nav .logo{
+    box-sizing: border-box;
+    color: var(--ac);
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    inset: 4vh auto auto 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen .nav .logo span{
+    font-size: 5rem;
+    transition: 300ms;
+}
+
+.screen .nav .logo span:hover{
+    rotate: 360deg;
+}
+
+.screen .nav .links{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 4vh);
+    height: auto;
+}
+
+.screen .nav .links .link{
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--fg);
+    font-weight: 600;
+    width: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: var(--gbg);
+    transition: 400ms;
+}
+
+.screen .nav .links .link span{
+    font-size: 2rem;
+    transition: 400ms;
+} 
+
+.screen .nav .links .link:hover{
+    background-color: var(--ac);
+}
+
+.screen .nav .links .link:hover span{
+    color: var(--bg);
+}
+
+/* frame */
+
+.frame h1.title{
+    line-height: 100%;
+    margin: 0;
+    font-size: 4rem;
+    margin-bottom: 5vh;
+}
+
+.panels-row{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 2vh;
+    margin-bottom: 2vh;
+}
+
+.panel{
+    position: relative;
+    border-radius: 2rem;
+    padding: 1vh 2vh;
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.panel.small{
+    aspect-ratio: 2.5;
+    flex: 1;
+}
+
+.panel .corner-icon{
+    position: absolute;
+    inset: auto -2vh -4vh auto;
+}
+
+.panel .corner-icon span{
+    color: var(--ac);
+    font-size: 10rem;
+}
+
+.panel h2.title{
+    font-size: 2rem;
+    line-height: 100%;
+}
+
+.panel .value{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 115%;
+}
+
+.panel .value .tip{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.panel.big{
+    flex: 1;
+    aspect-ratio: 3;
+}
+
+/* battery diagram */
+
+.diagram-wrap{
+    aspect-ratio: 1;
+    height: 80%;
+    position: absolute;
+    inset: 50% 50% auto auto;
+    transform: translate(-50%, 50%);
+    rotate: 180deg;
+}
+
+.ring{
+    width: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(transparent 0% 10%, red 10%, yellow 35%, green 75%, darkgreen 90%, transparent 90% 100%);
+}
+
+.ring-pos{
+    width: 101%;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(transparent 0% 73%, white 73% 75%, transparent 75% 100%);
+}
+
+.center-cover{
+    width: 75%;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+.percentage, .kwh{
+    rotate: 180deg;
+    user-select: none;
+}
+
+.percentage{
+    font-size: 4rem;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(50%, 50%);
+}
+
+.kwh{
+    font-size: 1.5rem;
+    position: absolute;
+    inset: 0% auto auto 50%;
+    transform: translate(50%, -100%);
+}
+
+/* news */
+
+.headlines{
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.headlines .headline{
+    display: flex;
+    justify-content: start;
+    gap: 1vh;
+    align-items: center;
+    cursor: pointer;
+}
+
+.headlines .headline span{
+    font-size: 3rem;
+    color: var(--ac);
+}
+
+.headlines .headline{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--fg);
+}

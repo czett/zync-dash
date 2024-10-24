@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}
+Willkommen, Patrick!
+{% endblock %}
+
+{% block smallpanels %}
+    <div class="panels-row">
+        <div class="panel small">
+            <h2 class="title">Wetter</h2>
+            <div class="value">15 °C <div class="tip">jetzt, in Dortmund</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">cloud</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">PV-Prognose</h2>
+            <div class="value">10 kWh <div class="tip">heute, insgesamt</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">sunny</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">PV-Ertrag</h2>
+            <div class="value">6,8 kWh <div class="tip">bis jetzt, 12:34 Uhr</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">bolt</span>
+            </div>
+        </div>
+        <div class="panel small">
+            <h2 class="title">System Test</h2>
+            <div class="value">problemlos <div class="tip">alles funktioniert</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">bug_report</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block bigpanel %}
+    <div class="panels-row">
+        <div class="panel big">
+            <h2 class="title">Batterie</h2>
+            <div class="value">74% <div class="tip">+36% seit heute Morgen</div></div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">battery_4_bar</span>
+            </div>
+            <div class="diagram-wrap">
+                <div class="ring"></div>
+                <div class="ring-pos"></div>
+                <div class="center-cover"></div>
+                <div class="percentage">74%</div>
+                <div class="kwh">14,8 kWh</div>
+            </div>
+        </div>
+        <div class="panel big">
+            <h2 class="title">Nachrichten</h2>
+            <div class="headlines">
+                <div class="headline">
+                    <span class="material-symbols-rounded">trending_up</span>
+                    Frau eröffnet Feuer in Polizeiwache und wird erschossen
+                </div>
+                <div class="headline">
+                    <span class="material-symbols-rounded">trending_up</span>
+                    Russland besiegelt strategische Partnerschaft mit Nordkorea
+                </div>
+                <div class="headline">
+                    <span class="material-symbols-rounded">trending_up</span>
+                    Deutschland will Hilfen von 96 Millionen Euro an Libanon geben
+                </div>
+            </div>
+            <div class="corner-icon">
+                <span class="material-symbols-rounded">newspaper</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
